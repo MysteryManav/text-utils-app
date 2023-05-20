@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import "./App.css";
 import React, { useState } from "react";
-import { BrowserRouter, Routes, Route, /*Link*/ } from "react-router-dom";
+// import { BrowserRouter, Routes, Route /*Link*/ } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import About from "./components/About";
@@ -77,18 +77,18 @@ function App() {
     // </div>
     <>
       {/* We can pass the props to the component like this.... */}
-      <BrowserRouter>
-        <Navbar
-          title="TextUtils"
-          aboutText="Documentation"
-          mode={mode}
-          toggleMode={toggleMode}
-        />
-        {/* Here, the title and aboutText are prop that we are passing to the Navbar component */}
-        <Alert alert={alert} />
-        <div className="container-fluid my-3">
-          <Routes>
-            <Route
+      {/* <BrowserRouter> */}
+      <Navbar
+        title="TextUtils"
+        aboutText="Documentation"
+        mode={mode}
+        toggleMode={toggleMode}
+      />
+      {/* Here, the title and aboutText are prop that we are passing to the Navbar component */}
+      <Alert alert={alert} />
+      <div className="container-fluid my-3">
+        {/* <Routes> */}
+        {/* <Route
               exact path="/"
               element={
                 <TextForm
@@ -97,11 +97,17 @@ function App() {
                   showAlert={showAlert}
                 />
               }
-            />
-            <Route exact path="/about" element={<About mode={mode} />} />
-          </Routes>
-        </div>
-      </BrowserRouter>
+            /> */}
+        <TextForm
+          heading="Enter the Text to Analyze"
+          mode={mode}
+          showAlert={showAlert}
+        />
+        <About mode={mode} />
+        {/* <Route exact path="/about" element={<About mode={mode} />} /> */}
+        {/* </Routes> */}
+      </div>
+      {/* </BrowserRouter> */}
     </>
   );
 }
